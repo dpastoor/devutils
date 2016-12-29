@@ -1,0 +1,16 @@
+Package: devutils
+Type: Package
+Title: utility functions
+Version: 0.0.1
+Authors@R: c(
+    person("Devin", "Pastoor", , "devin.pastoor@gmail.com", role = c("aut", "cre"))
+    )
+Description: various utility functions
+Depends:
+    R (>= 3.3.0)
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 5.0.1.9000
+Suggests:
+    testthat
+License: MIT + file LICENSE
+VignetteBuilder: knitr
