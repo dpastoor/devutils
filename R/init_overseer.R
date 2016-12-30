@@ -16,6 +16,12 @@ init_overseer <- function(dir = "modeling", abs = FALSE) {
   message("creating models.R")
   writeLines(c("library(overseer)",
                "",
+               "# check to make sure sourcing from proper directory if running interactively",
+               "if (!interactive_model_check(\"<REPLACEWITHYOURFIRSTMODEL.cpp>\")) {",
+               "    stop(\"make sure the directory is set to the models directory before running interactively,",
+               "    to make sure the relative paths will be the same as when sourcing\")",
+               "}",
+               "",
                "models <- overseer$new()",
                "",
                "",
