@@ -4,13 +4,25 @@
 \alias{init_overseer}
 \title{initialize an overseer modeling folder}
 \usage{
-init_overseer(dir = "modeling", abs = FALSE)
+init_overseer(check_file = NULL, dir = "modeling", abs = FALSE,
+  overwrite = FALSE)
 }
 \arguments{
+\item{check_file}{file present in overseer directory to confirm proper working directory}
+
 \item{dir}{directory name}
 
 \item{abs}{whether the directory is}
+
+\item{overwrite}{whether to overwrite models.R file if it already exists, defaults to FALSE}
 }
 \description{
 initialize an overseer modeling folder
+}
+\examples{
+\dontrun{
+init_overseer() # default to models directory with models.R file inside
+init_overseer("vancomcyin_poppk.cpp") # check for cpp file vancomycin_poppk.cpp
+init_overseer(dir = "mrgsolve_models") # create directory mrgsolve_models instead of models
+}
 }

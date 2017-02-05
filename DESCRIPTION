@@ -9,7 +9,7 @@ Description: various utility functions
 Depends:
     R (>= 3.3.0)
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 5.0.1.9000
+RoxygenNote: 6.0.0
 Suggests:
     testthat
 License: MIT + file LICENSE
