@@ -56,6 +56,6 @@ init_overseer <- function(
                "# or sourcing the file may not work properly",
                "models",
                ""), models_path)
-  message("sucessfully initialized!")
+  message("successfully initialized!")
   invisible()
 }
