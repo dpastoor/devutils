@@ -4,7 +4,7 @@
 \alias{init_overseer}
 \title{initialize an overseer modeling folder}
 \usage{
-init_overseer(check_file = NULL, dir = "modeling", abs = FALSE,
+init_overseer(check_file = NULL, dir = "models", abs = FALSE,
   overwrite = FALSE)
 }
 \arguments{

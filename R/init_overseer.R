@@ -11,7 +11,7 @@
 #' @export
 init_overseer <- function(
                           check_file = NULL,
-                          dir = "modeling",
+                          dir = "models",
                           abs = FALSE,
                           overwrite = FALSE
                           ) {
