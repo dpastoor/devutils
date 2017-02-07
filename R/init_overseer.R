@@ -45,7 +45,7 @@ init_overseer <- function(
                "    to make sure the relative paths will be the same as when sourcing\")",
                "}",
                "",
-               "models <- overseer$new()",
+               "models <- Overseer$new()",
                "",
                "",
                "# add model files below",
