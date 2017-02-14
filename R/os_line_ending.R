@@ -7,5 +7,5 @@ os_line_break <- function(force_value = NULL) {
   if (!is.null(force_value)) {
     return(force_value)
   }
-  ifelse(.Platform$OS.type == "windows", "\\r\\n", "\\n")
+  ifelse(.Platform$OS.type == "windows", "\r\n", "\n")
 }
