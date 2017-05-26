@@ -5,6 +5,7 @@
 #' @param .path path to place bookdown template
 #' @param .see_opts just print out the optional values to infuse
 #' @importFrom purrr map map_lgl map2
+#' @export
 use_bookdown <- function(author, description, ..., .path = ".", .see_opts = FALSE) {
   files <- list.files(system.file("bookdown_templates/simple", package = "devutils"), full.names = T)
   outputs <- infuse_files(files, author = author, description = description, .return_opts = .see_opts)
