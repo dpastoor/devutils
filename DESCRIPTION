@@ -10,6 +10,10 @@ Depends:
     R (>= 3.3.0)
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1
+Imports:
+    infuser,
+    purrr (>= 0.2.2),
+    readr (>= 1.0.0)
 Suggests:
     testthat
 License: MIT + file LICENSE
