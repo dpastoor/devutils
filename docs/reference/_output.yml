@@ -1,0 +1,6 @@
+bookdown::gitbook:
+  config:
+    toc:
+      collapse: section
+    sharing: no
+  css:: project.css
