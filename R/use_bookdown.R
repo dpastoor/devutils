@@ -11,7 +11,8 @@
 #' use_bookdown("Devin", "my cool project", .path = "lab-notebook")
 #' @export
 use_bookdown <- function(author, description, ..., .path = ".", .see_opts = FALSE) {
-  files <- list.files(system.file("bookdown_templates/simple", package = "devutils"), full.names = T)
+  files <- list.files(system.file("bookdown_templates/simple", package = "devutils"),
+                      full.names = T)
   outputs <- infuse_files(files, author = author, description = description, .return_opts = .see_opts)
   if(.see_opts) {
     print(outputs)
@@ -23,7 +24,12 @@ use_bookdown <- function(author, description, ..., .path = ".", .see_opts = FALS
       message("creating directory at: ", output_path)
       dir.create(output_path)
     }
-    readr::write_file(.x, file.path(output_path, basename(.y)))
+    # if starts with __ it means should actually be a hidden system file
+    # eg __.gitignore, so should strip the leading __ before writing it out
+    .y <- ifelse(stringr::str_detect(basename(.y), "^__"),
+                 sub("__", "", basename(.y)),
+                 basename(.y))
+    readr::write_file(.x, file.path(output_path, .y))
   })
 }
 
