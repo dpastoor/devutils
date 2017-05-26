@@ -1,4 +1,4 @@
-#' use bookdown in a folder
+#' create a bookdown scaffold
 #' @param author author of bookdown
 #' @param description description of project
 #' @param ... optional values to pass to infuser

@@ -2,7 +2,7 @@
 % Please edit documentation in R/use_bookdown.R
 \name{use_bookdown}
 \alias{use_bookdown}
-\title{use bookdown in a folder}
+\title{create a bookdown scaffold}
 \usage{
 use_bookdown(author, description, ..., .path = ".", .see_opts = FALSE)
 }
@@ -18,7 +18,7 @@ use_bookdown(author, description, ..., .path = ".", .see_opts = FALSE)
 \item{.see_opts}{just print out the optional values to infuse}
 }
 \description{
-use bookdown in a folder
+create a bookdown scaffold
 }
 \examples{
 use_bookdown("Devin", "my cool project")
