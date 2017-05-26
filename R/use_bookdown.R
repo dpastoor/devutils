@@ -5,6 +5,10 @@
 #' @param .path path to place bookdown template
 #' @param .see_opts just print out the optional values to infuse
 #' @importFrom purrr map map_lgl map2
+#' @examples
+#' use_bookdown("Devin", "my cool project")
+#' # put in subdirectory
+#' use_bookdown("Devin", "my cool project", .path = "lab-notebook")
 #' @export
 use_bookdown <- function(author, description, ..., .path = ".", .see_opts = FALSE) {
   files <- list.files(system.file("bookdown_templates/simple", package = "devutils"), full.names = T)
@@ -14,7 +18,12 @@ use_bookdown <- function(author, description, ..., .path = ".", .see_opts = FALS
     return(outputs)
   }
   map2(outputs, files, function(.x, .y) {
-    readr::write_file(.x, file.path(normalizePath(.path), basename(.y)))
+    output_path <- normalizePath(.path, mustWork = FALSE)
+    if (!dir.exists(output_path)) {
+      message("creating directory at: ", output_path)
+      dir.create(output_path)
+    }
+    readr::write_file(.x, file.path(output_path, basename(.y)))
   })
 }
 
