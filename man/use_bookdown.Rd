@@ -20,3 +20,8 @@ use_bookdown(author, description, ..., .path = ".", .see_opts = FALSE)
 \description{
 use bookdown in a folder
 }
+\examples{
+use_bookdown("Devin", "my cool project")
+# put in subdirectory
+use_bookdown("Devin", "my cool project", .path = "lab-notebook")
+}
