@@ -59,3 +59,7 @@ init_overseer <- function(
   message("successfully initialized!")
   invisible()
 }
+
+@rdname init_overseer
+@export
+use_overseer <- init_overseer
