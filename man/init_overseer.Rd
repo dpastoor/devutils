@@ -2,9 +2,13 @@
 % Please edit documentation in R/init_overseer.R
 \name{init_overseer}
 \alias{init_overseer}
+\alias{use_overseer}
 \title{initialize an overseer modeling folder}
 \usage{
 init_overseer(check_file = NULL, dir = "models", abs = FALSE,
+  overwrite = FALSE)
+
+use_overseer(check_file = NULL, dir = "models", abs = FALSE,
   overwrite = FALSE)
 }
 \arguments{

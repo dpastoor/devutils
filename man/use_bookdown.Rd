@@ -4,10 +4,13 @@
 \alias{use_bookdown}
 \title{create a bookdown scaffold}
 \usage{
-use_bookdown(author, description, ..., .path = ".", .see_opts = FALSE)
+use_bookdown(author, title, description, ..., .path = ".",
+  .see_opts = FALSE)
 }
 \arguments{
 \item{author}{author of bookdown}
+
+\item{title}{title of project}
 
 \item{description}{description of project}
 
@@ -21,7 +24,7 @@ use_bookdown(author, description, ..., .path = ".", .see_opts = FALSE)
 create a bookdown scaffold
 }
 \examples{
-use_bookdown("Devin", "my cool project")
+use_bookdown("Devin", "my cool project", "a very exciting project about things")
 # put in subdirectory
 use_bookdown("Devin", "my cool project", .path = "lab-notebook")
 }
