@@ -1,6 +1,6 @@
 ---
 knit: "bookdown::render_book"
-title: "Simplest Bayesian Example"
+title: "{{title | <Title>}}"
 author: ["{{author | <YOUR_NAME>}}"]
 description: "{{description | <DESCRIPTION>}}"
 site: bookdown::bookdown_site
