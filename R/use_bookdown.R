@@ -11,7 +11,7 @@
 #' # put in subdirectory
 #' use_bookdown("Devin", "my cool project", .path = "lab-notebook")
 #' @export
-use_bookdown <- function(author, title, description ..., .path = ".", .see_opts = FALSE) {
+use_bookdown <- function(author, title, description, ..., .path = ".", .see_opts = FALSE) {
   files <- list.files(system.file("bookdown_templates/simple", package = "devutils"),
                       full.names = T)
   outputs <- infuse_files(files, author = author, description = description, .return_opts = .see_opts)

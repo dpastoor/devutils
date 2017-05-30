@@ -60,6 +60,6 @@ init_overseer <- function(
   invisible()
 }
 
-@rdname init_overseer
-@export
+#' @rdname init_overseer
+#' @export
 use_overseer <- init_overseer
