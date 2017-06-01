@@ -1,8 +1,8 @@
 ---
 knit: "bookdown::render_book"
-title: "{{title | <Title>}}"
-author: ["{{author | <YOUR_NAME>}}"]
-description: "{{description | <DESCRIPTION>}}"
+title: "{{title | TITLE}}"
+author: ["{{author | YOUR_NAME}}"]
+description: "{{description | DESCRIPTION}}"
 site: bookdown::bookdown_site
 documentclass: book
 ---
