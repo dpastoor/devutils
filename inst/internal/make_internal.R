@@ -1,10 +1,10 @@
 library(magrittr)
 library(remake) # so packrat will grab if using packrat
 
-doc_package <- function(.pkg = "internal") {
-  devtools::document(glue::glue("{.pkg}"))
-  # kick so every time doc'd will have different output
-  Sys.time()
+doc_package <- function(.pkg_path = "internal") {
+  devtools::document(glue::glue("{.pkg_path}"))
+  # if any files change after re-documenting
+  file.info(dir(file.path(.pkg_path, "man"), full.names = TRUE))
 }
 
 parse_build_message <- function(.x) {
