@@ -21,8 +21,8 @@ build_package <- function(.pkg = "internal") {
   list(pkg_name = pkgbuild::build(.pkg), time = Sys.time())
 }
 
-check_desc <- function(.f) {
-  file.exists(.f)
+check_desc <- function(.desc_path) {
+  desc::desc_get_version(.desc_path)
 }
 
 #' @param .pkg package details from build_package
