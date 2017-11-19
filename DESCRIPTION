@@ -16,7 +16,9 @@ Imports:
     readr (>= 1.0.0),
     whisker,
     desc,
-    magrittr
+    magrittr,
+    glue,
+    stringr
 Suggests:
     testthat,
     knitr
