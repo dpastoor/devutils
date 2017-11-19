@@ -6,6 +6,7 @@
 #' @param .path path to place bookdown template
 #' @param .see_opts just print out the optional values to infuse
 #' @importFrom purrr map map_lgl map2
+#' @importFrom stats setNames
 #' @examples
 #' use_bookdown("Devin", "my cool project", "a very exciting project about things")
 #' # put in subdirectory

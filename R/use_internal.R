@@ -1,5 +1,9 @@
 #' use internal packages setup in a projet
-#' @param .dir directory for internal project packages
+#' @param proj project name
+#' @param first_name first name
+#' @param last_name last name
+#' @param email email address
+#' @param pkg_dir directory for internal project packages
 #' @importFrom purrr discard
 #' @export
 use_internal <- function(proj,
