@@ -5,7 +5,7 @@ Version: 1.0.0.9001
 Authors@R: c(
     person("Devin", "Pastoor", , "devin.pastoor@gmail.com", role = c("aut", "cre"))
     )
-Description: various utility functions
+Description: Various utility functions.
 Depends:
     R (>= 3.3.0)
 Roxygen: list(markdown = TRUE)

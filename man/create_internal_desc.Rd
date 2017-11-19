@@ -19,6 +19,9 @@ create a description file for internal package}
 \value{
 desc file
 }
+\description{
+create decription file for internal package
+}
 \details{
 creates the desc object representation with the fields
 needed to bootstrap an internal package description

@@ -1,4 +1,4 @@
-#' @title create decription file for internal package
+#' create decription file for internal package
 #' @param proj project name
 #' @param first_name author first name
 #' create a description file for internal package
