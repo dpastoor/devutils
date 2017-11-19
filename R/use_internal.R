@@ -50,5 +50,5 @@ use_internal <- function(proj,
 
   d <- create_internal_desc(proj, first_name, last_name, email)
   d$write(file.path(pkg_dir, "internal", "DESCRIPTION"))
-
+  return(invisible(TRUE))
 }
