@@ -7,10 +7,11 @@
 #' @param .see_opts just print out the optional values to infuse
 #' @importFrom purrr map map_lgl map2
 #' @importFrom stats setNames
-#' @examples
+#' @examples \dontrun{
 #' use_bookdown("Devin", "my cool project", "a very exciting project about things")
 #' # put in subdirectory
 #' use_bookdown("Devin", "my cool project", .path = "lab-notebook")
+#' }
 #' @export
 use_bookdown <- function(author, title, description, ..., .path = ".", .see_opts = FALSE) {
   files <- list.files(system.file("bookdown_templates/simple", package = "devutils"),
