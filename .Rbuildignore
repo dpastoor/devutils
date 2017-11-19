@@ -3,3 +3,5 @@
 ^LICENSE\.md$
 ^README\.Rmd$
 docs/
+^appveyor\.yml$
+^\.travis\.yml$
