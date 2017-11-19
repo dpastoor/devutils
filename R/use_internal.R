@@ -4,7 +4,7 @@
 #' @param last_name last name
 #' @param email email address
 #' @param pkg_dir directory for internal project packages
-#' @importFrom purrr discard
+#' @importFrom purrr discard map_chr
 #' @export
 use_internal <- function(proj,
                          first_name,
@@ -35,12 +35,17 @@ use_internal <- function(proj,
   relative_paths <- dir(internal_dir,
                         recursive = TRUE) %>%
     discard(is_dir)
-
-  folders <- unique(dirname(relative_paths))
+  ## replace __.dotfile with .dotfile
+  copy_paths <- map_chr(relative_paths, function(.p) {
+    sub(basename(.p),
+        gsub("^__", "", basename(.p)),
+        .p)
+  })
+  folders <- unique(dirname(copy_paths))
   folders <- folders[folders != "."]
-  map(file.path(pkg_dir, folders), mkdirp)
+  map_chr(file.path(pkg_dir, folders), mkdirp)
   file.copy(from = full_paths,
-            to = file.path(pkg_dir, relative_paths)
+            to = file.path(pkg_dir, copy_paths)
             )
 
   d <- create_internal_desc(proj, first_name, last_name, email)
