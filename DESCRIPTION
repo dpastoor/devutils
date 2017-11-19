@@ -15,8 +15,10 @@ Imports:
     purrr (>= 0.2.2),
     readr (>= 1.0.0),
     whisker,
-    desc
+    desc,
+    magrittr
 Suggests:
-    testthat
+    testthat,
+    knitr
 License: MIT + file LICENSE
 VignetteBuilder: knitr
