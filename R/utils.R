@@ -25,9 +25,9 @@ basename_sans_ext <- function(.x) {
   basename(file_path_sans_ext(.x))
 }
 
-#' recursively create a dir
-#' @param .dir path
-#' @param verbose give a message about dir creation
+# recursively create a dir
+# @param .dir path
+# @param verbose give a message about dir creation
 mkdirp <- function(.dir, verbose = FALSE) {
   if (!dir.exists(.dir)) {
     "!DEBUG creating dir at `.dir`"
