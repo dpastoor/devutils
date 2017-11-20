@@ -1,7 +1,6 @@
 #' create decription file for internal package
 #' @param proj project name
 #' @param first_name author first name
-#' create a description file for internal package
 #' @param last_name author last name
 #' @param email author email
 #' @return desc file

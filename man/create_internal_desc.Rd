@@ -9,8 +9,7 @@ create_internal_desc(proj, first_name, last_name, email)
 \arguments{
 \item{proj}{project name}
 
-\item{first_name}{author first name
-create a description file for internal package}
+\item{first_name}{author first name}
 
 \item{last_name}{author last name}
 
