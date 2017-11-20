@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>initialize an overseer modeling folder — init_overseer • devutils</title>
+<title>use internal packages setup in a projet — use_internal • devutils</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -78,46 +78,44 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>initialize an overseer modeling folder</h1>
+    <h1>use internal packages setup in a projet</h1>
     </div>
 
     
-    <p>initialize an overseer modeling folder</p>
+    <p>use internal packages setup in a projet</p>
     
 
-    <pre class="usage"><span class='fu'>init_overseer</span>(<span class='kw'>check_file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"models"</span>, <span class='kw'>abs</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>overwrite</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-
-<span class='fu'>use_overseer</span>(<span class='kw'>check_file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"models"</span>, <span class='kw'>abs</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>overwrite</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>use_internal</span>(<span class='no'>proj</span>, <span class='no'>first_name</span>, <span class='no'>last_name</span>, <span class='no'>email</span>, <span class='kw'>pkg_dir</span> <span class='kw'>=</span> <span class='st'>"./packages"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>check_file</th>
-      <td><p>file present in overseer directory to confirm proper working directory</p></td>
+      <th>proj</th>
+      <td><p>project name</p></td>
     </tr>
     <tr>
-      <th>dir</th>
-      <td><p>directory name</p></td>
+      <th>first_name</th>
+      <td><p>first name</p></td>
     </tr>
     <tr>
-      <th>abs</th>
-      <td><p>whether the directory is</p></td>
+      <th>last_name</th>
+      <td><p>last name</p></td>
     </tr>
     <tr>
-      <th>overwrite</th>
-      <td><p>whether to overwrite models.R file if it already exists, defaults to FALSE</p></td>
+      <th>email</th>
+      <td><p>email address</p></td>
+    </tr>
+    <tr>
+      <th>pkg_dir</th>
+      <td><p>directory for internal project packages</p></td>
     </tr>
     </table>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>init_overseer</span>() <span class='co'># default to models directory with models.R file inside</span>
-<span class='fu'>init_overseer</span>(<span class='st'>"vancomcyin_poppk.cpp"</span>) <span class='co'># check for cpp file vancomycin_poppk.cpp</span>
-<span class='fu'>init_overseer</span>(<span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"mrgsolve_models"</span>) <span class='co'># create directory mrgsolve_models instead of models</span>
+<span class='fu'>use_internal</span>(<span class='st'>"Test Project"</span>, <span class='st'>"Devin"</span>, <span class='st'>"pastoor"</span>, <span class='st'>"devin.pastoor@gmail.com"</span>)
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

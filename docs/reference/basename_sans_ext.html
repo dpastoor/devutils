@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>initialize an overseer modeling folder — init_overseer • devutils</title>
+<title>get the basename of a filepath, minus any extensions — basename_sans_ext • devutils</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -78,55 +78,31 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>initialize an overseer modeling folder</h1>
+    <h1>get the basename of a filepath, minus any extensions</h1>
     </div>
 
     
-    <p>initialize an overseer modeling folder</p>
+    <p>get the basename of a filepath, minus any extensions</p>
     
 
-    <pre class="usage"><span class='fu'>init_overseer</span>(<span class='kw'>check_file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"models"</span>, <span class='kw'>abs</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>overwrite</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-
-<span class='fu'>use_overseer</span>(<span class='kw'>check_file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"models"</span>, <span class='kw'>abs</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>overwrite</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>basename_sans_ext</span>(<span class='no'>.x</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>check_file</th>
-      <td><p>file present in overseer directory to confirm proper working directory</p></td>
-    </tr>
-    <tr>
-      <th>dir</th>
-      <td><p>directory name</p></td>
-    </tr>
-    <tr>
-      <th>abs</th>
-      <td><p>whether the directory is</p></td>
-    </tr>
-    <tr>
-      <th>overwrite</th>
-      <td><p>whether to overwrite models.R file if it already exists, defaults to FALSE</p></td>
+      <th>.x</th>
+      <td><p>filepath</p></td>
     </tr>
     </table>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>init_overseer</span>() <span class='co'># default to models directory with models.R file inside</span>
-<span class='fu'>init_overseer</span>(<span class='st'>"vancomcyin_poppk.cpp"</span>) <span class='co'># check for cpp file vancomycin_poppk.cpp</span>
-<span class='fu'>init_overseer</span>(<span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"mrgsolve_models"</span>) <span class='co'># create directory mrgsolve_models instead of models</span>
-<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+                </ul>
 
   </div>
 </div>
