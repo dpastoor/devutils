@@ -5,6 +5,9 @@
 #' @param email email address
 #' @param pkg_dir directory for internal project packages
 #' @importFrom purrr discard map_chr
+#' @examples \dontrun{
+#' use_internal("Test Project", "Devin", "pastoor", "devin.pastoor@gmail.com")
+#' }
 #' @export
 use_internal <- function(proj,
                          first_name,

@@ -20,3 +20,8 @@ use_internal(proj, first_name, last_name, email, pkg_dir = "./packages")
 \description{
 use internal packages setup in a projet
 }
+\examples{
+\dontrun{
+use_internal("Test Project", "Devin", "pastoor", "devin.pastoor@gmail.com")
+}
+}
