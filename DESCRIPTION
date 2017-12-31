@@ -18,7 +18,10 @@ Imports:
     desc,
     magrittr,
     glue,
-    stringr
+    stringr,
+    clipr,
+    crayon,
+    clisymbols
 Suggests:
     testthat,
     knitr
