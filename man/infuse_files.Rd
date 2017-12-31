@@ -4,7 +4,7 @@
 \alias{infuse_files}
 \title{infuse files or get the parameters needed}
 \usage{
-infuse_files(files, ..., .return_opts = F)
+infuse_files(files, ..., .return_opts = FALSE)
 }
 \arguments{
 \item{files}{vector of files to infuse}

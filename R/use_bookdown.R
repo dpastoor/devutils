@@ -22,11 +22,10 @@ use_bookdown <- function(author, title, description, ..., .path = ".", .see_opts
     return(outputs)
   }
 
-  mkdirp(output_path)
+  mkdirp(.path)
 
   map2(outputs, files, function(.x, .y) {
-
-    readr::write_file(.x, file.path(output_path, .y))
+    readr::write_file(.x, file.path(.path, .y))
   })
 }
 
