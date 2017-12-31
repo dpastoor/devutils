@@ -31,24 +31,19 @@ use_internal <- function(proj,
   mkdirp(pkg_dir)
   internal_dir <- system.file("internal",
              package = "devutils")
-  full_paths <- dir(internal_dir,
-                    full.names = TRUE,
-                    recursive = TRUE) %>%
+  full_paths <- list_files(internal_dir,
+                    full.names = TRUE
+                    ) %>%
     discard(is_dir)
-  relative_paths <- dir(internal_dir,
-                        recursive = TRUE) %>%
+  relative_paths <- list_files(internal_dir) %>%
     discard(is_dir)
   ## replace __.dotfile with .dotfile
-  copy_paths <- map_chr(relative_paths, function(.p) {
-    sub(basename(.p),
-        gsub("^__", "", basename(.p)),
-        .p)
-  })
-  folders <- unique(dirname(copy_paths))
+
+  folders <- unique(dirname(relative_paths))
   folders <- folders[folders != "."]
   map_chr(file.path(pkg_dir, folders), mkdirp)
   file.copy(from = full_paths,
-            to = file.path(pkg_dir, copy_paths)
+            to = file.path(pkg_dir, relative_paths)
             )
 
   d <- create_internal_desc(proj, first_name, last_name, email)
