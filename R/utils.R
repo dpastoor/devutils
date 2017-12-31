@@ -47,7 +47,14 @@ mkdirp <- function(.dir, verbose = FALSE) {
 #' @param must_work logical: if TRUE then an error is given if the result cannot be determined; if NA then a warning., Default: TRUE
 #' @return vector of file paths
 #' @export
-list_files <- function(path = ".", all.files = TRUE, recursive = TRUE, no.. = TRUE, ..., normalize = FALSE, must_work = TRUE) {
+list_files <- function(
+  path = ".",
+  all.files = TRUE,
+  recursive = TRUE,
+  no.. = TRUE, ...,
+  normalize = FALSE,
+  must_work = TRUE
+  ) {
   dirs__ <- dir(path, all.files = all.files, no.. = no.., recursive = recursive, ...)
   if (normalize) {
     dirs__ <- normalizePath(dirs__, mustWork = must_work)
