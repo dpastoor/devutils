@@ -21,7 +21,8 @@ Imports:
     stringr,
     clipr,
     crayon,
-    clisymbols
+    clisymbols,
+    whoami
 Suggests:
     testthat,
     knitr

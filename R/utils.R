@@ -61,3 +61,11 @@ list_files <- function(
   }
   return(dirs__)
 }
+
+
+stop_if_null <- function(check, message) {
+  if (is.null(check)) {
+    stop(message)
+  }
+  invisible()
+}

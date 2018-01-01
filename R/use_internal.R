@@ -1,18 +1,20 @@
 #' use internal packages setup in a projet
 #' @param proj project name
-#' @param first_name first name
-#' @param last_name last name
+#' @param name name
 #' @param email email address
 #' @param pkg_dir directory for internal project packages
 #' @importFrom purrr discard map_chr
 #' @examples \dontrun{
-#' use_internal("Test Project", "Devin", "pastoor", "devin.pastoor@gmail.com")
+#' # autodetection of user information
+#' use_internal("Test Project")
+#'
+#' # manual specification
+#' use_internal("Test Project", "Devin Pastoor", "devin.pastoor@gmail.com")
 #' }
 #' @export
 use_internal <- function(proj,
-                         first_name,
-                         last_name,
-                         email,
+                         name = whoami::fullname(),
+                         email = whoami::email_address(),
                          pkg_dir = "./packages") {
   required_packages <- c(
     "remake",
@@ -29,6 +31,9 @@ use_internal <- function(proj,
                     pkgs = paste0(required_packages[!has_required],
                                   collapse = ", ")))
   }
+
+  stop_if_null(name, 'whoami could not auto-detect name, please provide name with structure: "first last>"')
+  stop_if_null(email, "whoami could not auto-detect email, please provide email address")
   done("checking for required packages")
   mkdirp(pkg_dir)
   internal_dir <- system.file("internal",
