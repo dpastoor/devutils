@@ -4,14 +4,13 @@
 \alias{use_internal}
 \title{use internal packages setup in a projet}
 \usage{
-use_internal(proj, first_name, last_name, email, pkg_dir = "./packages")
+use_internal(proj, name = whoami::fullname(),
+  email = whoami::email_address(), pkg_dir = "./packages")
 }
 \arguments{
 \item{proj}{project name}
 
-\item{first_name}{first name}
-
-\item{last_name}{last name}
+\item{name}{name}
 
 \item{email}{email address}
 
@@ -22,6 +21,10 @@ use internal packages setup in a projet
 }
 \examples{
 \dontrun{
-use_internal("Test Project", "Devin", "pastoor", "devin.pastoor@gmail.com")
+# autodetection of user information
+use_internal("Test Project")
+
+# manual specification
+use_internal("Test Project", "Devin Pastoor", "devin.pastoor@gmail.com")
 }
 }
