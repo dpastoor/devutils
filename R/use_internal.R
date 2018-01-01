@@ -34,6 +34,7 @@ use_internal <- function(proj,
 
   stop_if_null(name, 'whoami could not auto-detect name, please provide name with structure: "first last>"')
   stop_if_null(email, "whoami could not auto-detect email, please provide email address")
+
   done("checking for required packages")
   mkdirp(pkg_dir)
   internal_dir <- system.file("internal",
@@ -53,7 +54,7 @@ use_internal <- function(proj,
             to = file.path(pkg_dir, relative_paths)
             )
   done("setting up package structure")
-  d <- create_internal_desc(proj, first_name, last_name, email)
+  d <- create_internal_desc(proj, as.person(name), email)
   done("creating description file")
   d$write(file.path(pkg_dir, "internal", "DESCRIPTION"))
   done("internal package created at ", pkg_dir)

@@ -1,7 +1,6 @@
 #' create decription file for internal package
 #' @param proj project name
-#' @param first_name author first name
-#' @param last_name author last name
+#' @param name name
 #' @param email author email
 #' @return desc file
 #' @details
@@ -15,8 +14,10 @@ create_internal_desc <- function(
   email
 ) {
   d <- desc::description$new("!new")
-  author <- utils::person(first_name,
-                   last_name,
+  # will pass through if name is already a person object, else will convert
+  p__ <- as.person(name)
+  author <- utils::person(p__$given,
+                   p__$family,
                    email = email,
                    role = c("aut", "cre"))
   d$del(keys = c("Maintainer", "URL", "BugReports", "License"))
