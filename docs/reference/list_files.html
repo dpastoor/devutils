@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>detect if a filepath is for a directory — is_dir • devutils</title>
+<title>list files, including hidden ones, in a directory — list_files • devutils</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -78,23 +78,53 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>detect if a filepath is for a directory</h1>
+    <h1>list files, including hidden ones, in a directory</h1>
     </div>
 
     
-    <p>detect if a filepath is for a directory</p>
+    <p>list files, including hidden ones, in a directory</p>
     
 
-    <pre class="usage"><span class='fu'>is_dir</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>list_files</span>(<span class='kw'>path</span> <span class='kw'>=</span> <span class='st'>"."</span>, <span class='kw'>all.files</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>recursive</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>no..</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='no'>...</span>, <span class='kw'>normalize</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>must_work</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>vector of file paths</p></td>
+      <th>path</th>
+      <td><p>a character vector of full path names; the default corresponds to the working directory, Default: '.'</p></td>
+    </tr>
+    <tr>
+      <th>all.files</th>
+      <td><p>a logical value. If FALSE, only the names of visible files are returned.
+If TRUE, all file names will be returned., Default: TRUE</p></td>
+    </tr>
+    <tr>
+      <th>recursive</th>
+      <td><p>logical. Should the listing recurse into directories?, Default: TRUE</p></td>
+    </tr>
+    <tr>
+      <th>no..</th>
+      <td><p>logical. Should both "." and ".." be excluded also from non-recursive listings?, Default: TRUE</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>args to pass to <code>dir()</code></p></td>
+    </tr>
+    <tr>
+      <th>normalize</th>
+      <td><p>whether to convert file paths to canonical form for the platform, Default: FALSE</p></td>
+    </tr>
+    <tr>
+      <th>must_work</th>
+      <td><p>logical: if TRUE then an error is given if the result cannot be determined; if NA then a warning., Default: TRUE</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>vector of file paths</p>
     
 
   </div>
@@ -102,7 +132,9 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
 
   </div>
 </div>

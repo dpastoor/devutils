@@ -52,7 +52,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -85,7 +85,8 @@
     <p>use internal packages setup in a projet</p>
     
 
-    <pre class="usage"><span class='fu'>use_internal</span>(<span class='no'>proj</span>, <span class='no'>first_name</span>, <span class='no'>last_name</span>, <span class='no'>email</span>, <span class='kw'>pkg_dir</span> <span class='kw'>=</span> <span class='st'>"./packages"</span>)</pre>
+    <pre class="usage"><span class='fu'>use_internal</span>(<span class='no'>proj</span>, <span class='kw'>name</span> <span class='kw'>=</span> <span class='kw pkg'>whoami</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/whoami/topics/fullname'>fullname</a></span>(),
+  <span class='kw'>email</span> <span class='kw'>=</span> <span class='kw pkg'>whoami</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/whoami/topics/email_address'>email_address</a></span>(), <span class='kw'>pkg_dir</span> <span class='kw'>=</span> <span class='st'>"./packages"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -95,12 +96,8 @@
       <td><p>project name</p></td>
     </tr>
     <tr>
-      <th>first_name</th>
-      <td><p>first name</p></td>
-    </tr>
-    <tr>
-      <th>last_name</th>
-      <td><p>last name</p></td>
+      <th>name</th>
+      <td><p>name</p></td>
     </tr>
     <tr>
       <th>email</th>
@@ -115,7 +112,11 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>use_internal</span>(<span class='st'>"Test Project"</span>, <span class='st'>"Devin"</span>, <span class='st'>"pastoor"</span>, <span class='st'>"devin.pastoor@gmail.com"</span>)
+<span class='co'># autodetection of user information</span>
+<span class='fu'>use_internal</span>(<span class='st'>"Test Project"</span>)
+
+<span class='co'># manual specification</span>
+<span class='fu'>use_internal</span>(<span class='st'>"Test Project"</span>, <span class='st'>"Devin Pastoor"</span>, <span class='st'>"devin.pastoor@gmail.com"</span>)
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

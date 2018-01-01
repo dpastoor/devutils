@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>detect if a filepath is for a directory — is_dir • devutils</title>
+<title>reload a package namespace — reload_namespace • devutils</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -78,23 +78,33 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>detect if a filepath is for a directory</h1>
+    <h1>reload a package namespace</h1>
     </div>
 
     
-    <p>detect if a filepath is for a directory</p>
+    <p>reload a package namespace</p>
     
 
-    <pre class="usage"><span class='fu'>is_dir</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>reload_namespace</span>(<span class='no'>pkg</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>vector of file paths</p></td>
+      <th>pkg</th>
+      <td><p>package to reload</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>arguments to pass to <code>library()</code></p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>used to unload and reload a package namespace,
+can be helpful when a package has been rebuilt in a
+separate process</p>
     
 
   </div>
@@ -102,7 +112,9 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#details">Details</a></li>
+          </ul>
 
   </div>
 </div>
