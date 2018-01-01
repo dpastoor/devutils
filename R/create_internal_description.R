@@ -3,14 +3,14 @@
 #' @param name name
 #' @param email author email
 #' @return desc file
+#' @importFrom utils as.person
 #' @details
 #' creates the desc object representation with the fields
 #' needed to bootstrap an internal package description
 #' @export
 create_internal_desc <- function(
   proj,
-  first_name,
-  last_name,
+  name,
   email
 ) {
   d <- desc::description$new("!new")
