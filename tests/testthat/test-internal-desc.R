@@ -3,8 +3,7 @@ context("internal-desc")
 describe("internal desc created", {
   it("bootstraps the fields correctly", {
     d <- create_internal_desc("test proj",
-                         "devin",
-                         "pastoor",
+                         "devin pastoor",
                          "devin.pastoor@gmail.com")
     expect_equal(as.character(d$get_author()),
                  "devin pastoor <devin.pastoor@gmail.com> [aut, cre]")
