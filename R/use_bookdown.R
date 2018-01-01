@@ -24,8 +24,8 @@ use_bookdown <- function(author, title, description, ..., .path = ".", .see_opts
 
   mkdirp(.path)
 
-  map2(outputs, files, function(.x, .y) {
-    readr::write_file(.x, file.path(.path, .y))
+  map2(outputs, basename(files), function(file_string, filename) {
+    readr::write_file(file_string, file.path(.path, filename))
   })
 }
 
