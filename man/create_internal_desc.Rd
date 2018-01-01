@@ -4,14 +4,14 @@
 \alias{create_internal_desc}
 \title{create decription file for internal package}
 \usage{
-create_internal_desc(proj, first_name, last_name, email)
+create_internal_desc(proj, name, email)
 }
 \arguments{
 \item{proj}{project name}
 
-\item{email}{author email}
-
 \item{name}{name}
+
+\item{email}{author email}
 }
 \value{
 desc file

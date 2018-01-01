@@ -2,17 +2,14 @@
 % Please edit documentation in R/reload.R
 \name{reload_namespace}
 \alias{reload_namespace}
-\alias{reload_internal}
 \title{reload a package namespace}
 \usage{
 reload_namespace(pkg, ...)
-
-reload_internal()
 }
 \arguments{
 \item{pkg}{package to reload}
 
-\item{...}{arguements to pass to \code{\link[=library]{library()}}}
+\item{...}{arguments to pass to \code{\link[=library]{library()}}}
 }
 \description{
 reload a package namespace
