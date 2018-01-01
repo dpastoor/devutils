@@ -18,7 +18,8 @@ use_internal <- function(proj,
     "remake",
     "glue",
     "stringr",
-    "pkgbuild"
+    "pkgbuild",
+    "callr"
   )
   has_required <- purrr::map_lgl(required_packages,
                                  requireNamespace,
@@ -28,6 +29,7 @@ use_internal <- function(proj,
                     pkgs = paste0(required_packages[!has_required],
                                   collapse = ", ")))
   }
+  done("checking for required packages")
   mkdirp(pkg_dir)
   internal_dir <- system.file("internal",
              package = "devutils")
@@ -45,8 +47,10 @@ use_internal <- function(proj,
   file.copy(from = full_paths,
             to = file.path(pkg_dir, relative_paths)
             )
-
+  done("setting up package structure")
   d <- create_internal_desc(proj, first_name, last_name, email)
+  done("creating description file")
   d$write(file.path(pkg_dir, "internal", "DESCRIPTION"))
+  done("internal package created at ", pkg_dir)
   return(invisible(TRUE))
 }

@@ -17,6 +17,7 @@ use_bookdown <- function(author, title, description, ..., .path = ".", .see_opts
   files <- list_files(system.file("bookdown_templates/simple", package = "devutils"),
                       full.names = T)
   outputs <- infuse_files(files, author = author, description = description, .return_opts = .see_opts)
+  done("applying bookdown settings")
   if(.see_opts) {
     print(outputs)
     return(outputs)
@@ -27,6 +28,7 @@ use_bookdown <- function(author, title, description, ..., .path = ".", .see_opts
   map2(outputs, basename(files), function(file_string, filename) {
     readr::write_file(file_string, file.path(.path, filename))
   })
+  done("bookdown files added in directory ", .path)
 }
 
 #' infuse files or get the parameters needed
