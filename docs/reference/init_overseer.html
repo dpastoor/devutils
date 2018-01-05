@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>initialize an overseer modeling folder � init_overseer • devutils</title>
+<title>initialize an overseer modeling folder — init_overseer • devutils</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -23,14 +23,17 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-
+  
+  
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -49,6 +52,12 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
@@ -76,28 +85,40 @@
     <p>initialize an overseer modeling folder</p>
     
 
-    <pre><span class='fu'>init_overseer</span>(<span class='kw'>check_file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"models"</span>, <span class='kw'>abs</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+    <pre class="usage"><span class='fu'>init_overseer</span>(<span class='kw'>check_file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"models"</span>, <span class='kw'>abs</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>overwrite</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+
+<span class='fu'>use_overseer</span>(<span class='kw'>check_file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"models"</span>, <span class='kw'>abs</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>overwrite</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>check_file</dt>
-      <dd>file present in overseer directory to confirm proper working directory</dd>
-      <dt>dir</dt>
-      <dd>directory name</dd>
-      <dt>abs</dt>
-      <dd>whether the directory is</dd>
-      <dt>overwrite</dt>
-      <dd>whether to overwrite models.R file if it already exists, defaults to FALSE</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>check_file</th>
+      <td><p>file present in overseer directory to confirm proper working directory</p></td>
+    </tr>
+    <tr>
+      <th>dir</th>
+      <td><p>directory name</p></td>
+    </tr>
+    <tr>
+      <th>abs</th>
+      <td><p>whether the directory is</p></td>
+    </tr>
+    <tr>
+      <th>overwrite</th>
+      <td><p>whether to overwrite models.R file if it already exists, defaults to FALSE</p></td>
+    </tr>
+    </table>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Not run: ------------------------------------</span>
-<span class='co'># init_overseer() # default to models directory with models.R file inside</span>
-<span class='co'># init_overseer("vancomcyin_poppk.cpp") # check for cpp file vancomycin_poppk.cpp</span>
-<span class='co'># init_overseer(dir = "mrgsolve_models") # create directory mrgsolve_models instead of models</span>
-<span class='co'>## ---------------------------------------------</span></div></pre>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='fu'>init_overseer</span>() <span class='co'># default to models directory with models.R file inside</span>
+<span class='fu'>init_overseer</span>(<span class='st'>"vancomcyin_poppk.cpp"</span>) <span class='co'># check for cpp file vancomycin_poppk.cpp</span>
+<span class='fu'>init_overseer</span>(<span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"mrgsolve_models"</span>) <span class='co'># create directory mrgsolve_models instead of models</span>
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

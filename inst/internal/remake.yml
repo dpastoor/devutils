@@ -1,0 +1,25 @@
+## All R files that are used must be listed here:
+sources:
+  - make_internal.R
+
+## Most of a remakefile will be targets.  They can be listed in any
+## order; whatever makes most sense.  Files can be split up and
+## included into the main file if you need to impose more structure.
+targets:
+
+  all:
+    depends: install
+
+  internal/DESCRIPTION:
+    command: check_desc(target_name)
+    
+  doc:
+    command: doc_package()
+    depends: internal/DESCRIPTION
+
+  build:
+    command: build_package()
+    depends: doc
+
+  install:
+    command: install_bin(build)

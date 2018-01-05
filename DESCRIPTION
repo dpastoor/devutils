@@ -1,20 +1,30 @@
 Package: devutils
 Type: Package
 Title: utility functions
-Version: 1.0.0
+Version: 1.1.0
 Authors@R: c(
     person("Devin", "Pastoor", , "devin.pastoor@gmail.com", role = c("aut", "cre"))
     )
-Description: various utility functions
+Description: Various utility functions.
 Depends:
     R (>= 3.3.0)
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1
-Imports:
+Imports: 
     infuser,
     purrr (>= 0.2.2),
-    readr (>= 1.0.0)
+    readr (>= 1.0.0),
+    whisker,
+    desc,
+    magrittr,
+    glue,
+    stringr,
+    clipr,
+    crayon,
+    clisymbols,
+    whoami
 Suggests:
-    testthat
+    testthat,
+    knitr
 License: MIT + file LICENSE
 VignetteBuilder: knitr

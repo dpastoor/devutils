@@ -24,7 +24,9 @@ use_bookdown(author, title, description, ..., .path = ".",
 create a bookdown scaffold
 }
 \examples{
+\dontrun{
 use_bookdown("Devin", "my cool project", "a very exciting project about things")
 # put in subdirectory
 use_bookdown("Devin", "my cool project", .path = "lab-notebook")
+}
 }
