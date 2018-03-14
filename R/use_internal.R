@@ -49,7 +49,7 @@ use_internal <- function(proj,
 
   folders <- unique(dirname(relative_paths))
   folders <- folders[folders != "."]
-  map_chr(file.path(pkg_dir, folders), mkdirp)
+  map_lgl(file.path(pkg_dir, folders), mkdirp)
   file.copy(from = full_paths,
             to = file.path(pkg_dir, relative_paths)
             )

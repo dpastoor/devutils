@@ -33,7 +33,9 @@ mkdirp <- function(.dir, verbose = FALSE) {
   if (!dir.exists(.dir)) {
     "!DEBUG creating dir at `.dir`"
     dir.create(.dir, recursive = TRUE)
+    return(invisible(TRUE))
   }
+    return(invisible(FALSE))
 }
 
 #' list files, including hidden ones, in a directory
