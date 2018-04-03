@@ -10,7 +10,7 @@
 reload_namespace <- function(pkg, ...) {
   prev_version <- packageVersion(pkg)
   unloadNamespace(pkg)
-  requireNamespace(pkg, character.only = TRUE, ...)
+  requireNamespace(pkg, ...)
   new_version <- packageVersion(pkg)
   message(glue::glue("{pkg} version: {prev_version} --> {new_version}"))
   invisible()
