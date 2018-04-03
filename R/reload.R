@@ -5,10 +5,15 @@
 #' used to unload and reload a package namespace,
 #' can be helpful when a package has been rebuilt in a
 #' separate process
+#' @importFrom utils packageVersion
 #' @export
 reload_namespace <- function(pkg, ...) {
+  prev_version <- packageVersion(pkg)
   unloadNamespace(pkg)
-  library(pkg, character.only = TRUE, ...)
+  requireNamespace(pkg, character.only = TRUE, ...)
+  new_version <- packageVersion(pkg)
+  message(glue::glue("{pkg} version: {prev_version} --> {new_version}"))
+  invisible()
 }
 
 
@@ -16,5 +21,6 @@ reload_namespace <- function(pkg, ...) {
 #' @param ... arguments to pass to [reload_namespace()]
 #' @export
 reload_internal <- function(...) {
+
   reload_namespace("internal", ...)
 }
