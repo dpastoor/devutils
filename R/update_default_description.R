@@ -26,7 +26,7 @@ update_default_description <- function(
                           p__$family,
                           email = email,
                           role = c("aut", "cre"))
-  d$del(keys = c("Maintainer", "URL", "BugReports", "License"))
+  d$del(keys = c("Maintainer", "Author", "URL", "BugReports", "License"))
   d$set_version(package_version("0.0.1"))
   d$set(Title = title)
   d$set(Description = description)
