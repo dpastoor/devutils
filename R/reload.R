@@ -5,10 +5,12 @@
 #' used to unload and reload a package namespace,
 #' can be helpful when a package has been rebuilt in a
 #' separate process
+#' @importFrom utils packageVersion
 #' @export
 reload_namespace <- function(pkg, ...) {
   unloadNamespace(pkg)
-  library(pkg, character.only = TRUE, ...)
+  requireNamespace(pkg, ...)
+  invisible()
 }
 
 

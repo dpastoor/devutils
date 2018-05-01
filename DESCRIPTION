@@ -1,7 +1,7 @@
 Package: devutils
 Type: Package
 Title: utility functions
-Version: 1.1.1
+Version: 1.2.0
 Authors@R: c(
     person("Devin", "Pastoor", , "devin.pastoor@gmail.com", role = c("aut", "cre"))
     )
@@ -9,7 +9,7 @@ Description: Various utility functions.
 Depends:
     R (>= 3.3.0)
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.0.1
+RoxygenNote: 6.0.1.9000
 Imports: 
     infuser,
     purrr (>= 0.2.2),
