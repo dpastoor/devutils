@@ -1,3 +1,7 @@
+# devutils 1.3.1 
+
+* fix to `update_new_package()` to properly clear out hello docs
+
 # devutils 1.3.0
 
 * `update_new_package()` - bootstrap a working package from the rstudio package scaffold
