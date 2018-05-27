@@ -30,13 +30,16 @@ update_new_package <- function(
                               .dp = "DESCRIPTION",
                               write = TRUE)
   file.remove("NAMESPACE")
-  # use_pipe needs to see a roxygen setup
-  devtools::document()
-  usethis::use_pipe()
+  if (fs::dir_exists('man')) {
+    fs::file_delete(fs::dir_ls('man'))
+  }
   if (file.exists("R/hello.R")) {
     file.remove("R/hello.R")
-    file.remove("man/hello.R")
   }
+  # use_pipe needs to see a roxygen setup so run document
+  # once to bootstrap
+  devtools::document()
+  usethis::use_pipe()
   devtools::document()
   return(invisible(TRUE))
 }
