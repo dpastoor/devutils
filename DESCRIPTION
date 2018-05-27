@@ -25,6 +25,7 @@ Imports:
     whoami,
     usethis,
     roxygen2,
+    fs,
     devtools
 Suggests:
     testthat,
