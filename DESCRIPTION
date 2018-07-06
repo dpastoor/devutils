@@ -25,6 +25,8 @@ Imports:
     whoami,
     usethis,
     roxygen2,
+    here,
+    withr,
     fs,
     devtools
 Suggests:
