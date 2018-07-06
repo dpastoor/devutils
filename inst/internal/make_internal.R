@@ -1,5 +1,4 @@
 library(magrittr)
-library(remake) # so packrat will grab if using packrat
 
 doc_package <- function(.pkg_path = "internal") {
   devtools::document(glue::glue("{.pkg_path}"))
@@ -33,3 +32,7 @@ install_bin <- function(.pkg_details) {
   message(sprintf("latest package version installed: %s", basename(stringr::str_replace(.pkg_details$pkg_name, ".tar.gz", ""))))
   Sys.time()
 }
+
+doc_package() %>%
+  build_package() %>%
+  install_bin()
