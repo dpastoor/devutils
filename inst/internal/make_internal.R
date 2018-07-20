@@ -1,9 +1,7 @@
 library(magrittr)
 
 doc_package <- function(.pkg_path = "internal") {
-  devtools::document(glue::glue("{.pkg_path}"))
-  # if any files change after re-documenting
-  file.info(dir(file.path(.pkg_path, "man"), full.names = TRUE))
+  roxygen2::roxygenize(glue::glue("{.pkg_path}"), load_code = pkgload::pkg_ns)
 }
 
 parse_build_message <- function(.x) {
@@ -33,6 +31,8 @@ install_bin <- function(.pkg_details) {
   Sys.time()
 }
 
-doc_package() %>%
+withr::with_dir(file.path(here::here(), "packages"), {
+  doc_package() 
   build_package() %>%
   install_bin()
+})
