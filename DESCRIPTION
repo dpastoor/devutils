@@ -25,6 +25,8 @@ Imports:
     whoami,
     usethis,
     roxygen2,
+    pkgload,
+    pkgbuild,
     here,
     withr,
     fs,
