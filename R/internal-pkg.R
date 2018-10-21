@@ -68,12 +68,13 @@ install_bin <- function(.pkg_details, .dir = "bin") {
     "upgraded"
   }
   callr::rcmd("INSTALL", c(glue::glue("--library={.dir}"), .pkg_details$pkg_name))
-  if (!is.null(current_version)) {
-    message(glue::glue("package {pkg_name} {upgrade_type} from {current_version} to {version_to_install}"))
+  msg <- if (!is.null(current_version)) {
+    glue::glue("package {pkg_name} {upgrade_type} from {current_version} to {version_to_install}")
   } else {
-    message(glue::glue("package {pkg_name} installed with version: {version_to_install}"))
+    glue::glue("package {pkg_name} installed with version: {version_to_install}")
   }
-  Sys.time()
+  message(msg)
+  return(msg)
 }
 
 #' build the internal package
@@ -81,16 +82,9 @@ install_bin <- function(.pkg_details, .dir = "bin") {
 #' @export
 .build_internal <- function(.pkgsdir = file.path(here::here(), "packages")) {
   withr::with_dir(.pkgsdir, {
-    initially_loaded <- isNamespaceLoaded("internal")
-    if (initially_loaded) {
-      unloadNamespace("internal")
-    }
+    # this should be called in a callr wrapper so won't be loaded
     doc_package()
     build_package() %>%
       install_bin()
-
-    if (initially_loaded) {
-      requireNamespace("internal")
-    }
   })
 }
