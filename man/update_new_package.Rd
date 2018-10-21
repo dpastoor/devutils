@@ -4,8 +4,9 @@
 \alias{update_new_package}
 \title{update the default configuration of new package scaffold}
 \usage{
-update_new_package(title, description = title, name = whoami::fullname(),
-  email = whoami::email_address(), .dp = "DESCRIPTION")
+update_new_package(title, description = title,
+  name = whoami::fullname(), email = whoami::email_address(),
+  .dp = "DESCRIPTION")
 }
 \arguments{
 \item{title}{title of package}
