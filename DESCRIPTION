@@ -7,7 +7,7 @@ Authors@R: c(
     )
 Description: Various utility functions.
 Depends:
-    R (>= 3.3.0)
+    R (>= 3.1.0)
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1.9000
 Imports: 
