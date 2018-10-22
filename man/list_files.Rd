@@ -4,8 +4,8 @@
 \alias{list_files}
 \title{list files, including hidden ones, in a directory}
 \usage{
-list_files(path = ".", all.files = TRUE, recursive = TRUE, no.. = TRUE,
-  ..., normalize = FALSE, must_work = TRUE)
+list_files(path = ".", all.files = TRUE, recursive = TRUE,
+  no.. = TRUE, ..., normalize = FALSE, must_work = TRUE)
 }
 \arguments{
 \item{path}{a character vector of full path names; the default corresponds to the working directory, Default: '.'}

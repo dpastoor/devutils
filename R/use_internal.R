@@ -17,7 +17,6 @@ use_internal <- function(proj,
                          email = whoami::email_address(),
                          pkg_dir = "./packages") {
   required_packages <- c(
-    "remake",
     "glue",
     "stringr",
     "pkgbuild",
