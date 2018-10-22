@@ -35,6 +35,7 @@ Imports:
     devtools
 Suggests:
     testthat,
-    knitr
+    knitr,
+    covr
 License: MIT + file LICENSE
 VignetteBuilder: knitr

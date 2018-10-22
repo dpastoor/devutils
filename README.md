@@ -5,6 +5,9 @@ status](https://travis-ci.org/dpastoor/devutils.svg?branch=master)](https://trav
 [![AppVeyor Build
 Status](https://ci.appveyor.com/api/projects/status/github/dpastoor/devutils?branch=master&svg=true)](https://ci.appveyor.com/project/dpastoor/devutils)
 
+[![Coverage
+status](https://codecov.io/gh/dpastoor/devutils/branch/master/graph/badge.svg)](https://codecov.io/github/dpastoor/devutils?branch=master)
+
 # devutils
 
 Utility functions for supporting project work and application
