@@ -1,0 +1,15 @@
+describe("bookdown template scaffold created", {
+  it("will create the files in a folder", {
+    tdir <- tempdir()
+    bookdown_dir <- file.path(tdir, "bookdown-test1")
+    setup(dir.create(bookdown_dir))
+    teardown(unlink(bookdown_dir, recursive = TRUE, force = TRUE))
+    use_bookdown("test-author", "test title", "test description", .path = bookdown_dir)
+    dir_files <- dir(path = bookdown_dir)
+    expect_true("index.Rmd" %in% dir_files)
+    expect_true("_bookdown.yml" %in% dir_files)
+    index_lines <- readLines(file.path(bookdown_dir, "index.Rmd"))
+    expect_false(any(grepl('title: "testtitle"', index_lines)))
+    expect_true(any(grepl('title: "test title"', index_lines)))
+  })
+})
