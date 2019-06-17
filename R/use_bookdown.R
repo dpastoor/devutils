@@ -4,7 +4,7 @@
 #' @param description description of project
 #' @param ... optional values to pass to infuser
 #' @param .path path to place bookdown template
-#' @importFrom purrr map map_lgl map2
+#' @importFrom purrr map map_lgl walk2
 #' @importFrom stats setNames
 #' @examples \dontrun{
 #' use_bookdown("Devin", "my cool project", "a very exciting project about things")
@@ -22,7 +22,7 @@ use_bookdown <- function(author, title, description, ..., .path = ".") {
   # this can be simple as bookdown does not currently have hierarchy and is
   # a single folder, however more complex logic would be needed for more
   # complex scenarios
-  map2(outputs, basename(files), function(file_string, filename) {
+  walk2(outputs, stringr::str_replace(basename(files), pattern = "__\\.", "."), function(file_string, filename) {
     readr::write_file(file_string, file.path(.path, filename))
   })
   done("bookdown files added in directory: ", .path)
@@ -30,7 +30,6 @@ use_bookdown <- function(author, title, description, ..., .path = ".") {
 
 #' infuse files or get the parameters needed
 #' @param files vector of files to infuse
-#' @param vars variables to pass to templates
 #' @param ... parameters to pass to glue
 #' @details
 #' parameters passed via ... will be given to glue and exposed

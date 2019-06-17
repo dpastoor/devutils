@@ -50,12 +50,12 @@ use_internal <- function(proj,
   folders <- folders[folders != "."]
   map_lgl(file.path(pkg_dir, folders), mkdirp)
   file.copy(from = full_paths,
-            to = file.path(pkg_dir, relative_paths)
+            to = file.path(pkg_dir, stringr::str_replace(relative_paths, "--\\.", "."))
             )
-  done("setting up package structure")
+  done("set up package structure")
   d <- create_internal_desc(proj, as.person(name), email)
-  done("creating description file")
+  done("created description file")
   d$write(file.path(pkg_dir, "internal", "DESCRIPTION"))
-  done("internal package created at ", pkg_dir)
+  done("internal package created at: ", pkg_dir)
   return(invisible(TRUE))
 }

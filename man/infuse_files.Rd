@@ -10,8 +10,6 @@ infuse_files(files, ...)
 \item{files}{vector of files to infuse}
 
 \item{...}{parameters to pass to glue}
-
-\item{vars}{variables to pass to templates}
 }
 \value{
 list
