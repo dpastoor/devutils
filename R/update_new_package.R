@@ -43,3 +43,7 @@ update_new_package <- function(
   devtools::document()
   return(invisible(TRUE))
 }
+
+#' create a new package
+#' @param name
+#' @inheritParams update_new_package
