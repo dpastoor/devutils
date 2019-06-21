@@ -31,7 +31,7 @@ update_new_package <- function(
                               write = TRUE)
   file.remove("NAMESPACE")
   if (fs::dir_exists('man')) {
-    fs::file_delete(fs::dir_ls('man'))
+    fs::dir_delete("man")
   }
   if (file.exists("R/hello.R")) {
     file.remove("R/hello.R")
@@ -43,3 +43,7 @@ update_new_package <- function(
   devtools::document()
   return(invisible(TRUE))
 }
+
+#' create a new package
+#' @param name
+#' @inheritParams update_new_package

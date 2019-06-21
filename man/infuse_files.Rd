@@ -4,18 +4,21 @@
 \alias{infuse_files}
 \title{infuse files or get the parameters needed}
 \usage{
-infuse_files(files, ..., .return_opts = FALSE)
+infuse_files(files, ...)
 }
 \arguments{
 \item{files}{vector of files to infuse}
 
-\item{...}{parameters to pass to infuse}
-
-\item{.return_opts}{return the requested variables instead of infusing}
+\item{...}{parameters to pass to glue}
 }
 \value{
 list
 }
 \description{
 infuse files or get the parameters needed
+}
+\details{
+parameters passed via ... will be given to glue and exposed
+as variables to replace in any template variables, as denoted
+by {{ }}
 }

@@ -4,8 +4,7 @@
 #' @param description description of project
 #' @param ... optional values to pass to infuser
 #' @param .path path to place bookdown template
-#' @param .see_opts just print out the optional values to infuse
-#' @importFrom purrr map map_lgl map2
+#' @importFrom purrr map map_lgl walk2
 #' @importFrom stats setNames
 #' @examples \dontrun{
 #' use_bookdown("Devin", "my cool project", "a very exciting project about things")
@@ -13,45 +12,33 @@
 #' use_bookdown("Devin", "my cool project", .path = "lab-notebook")
 #' }
 #' @export
-use_bookdown <- function(author, title, description, ..., .path = ".", .see_opts = FALSE) {
+use_bookdown <- function(author, title, description, ..., .path = ".") {
   files <- list_files(system.file("bookdown_templates/simple", package = "devutils"),
                       full.names = T)
-  outputs <- infuse_files(files, author = author, description = description, .return_opts = .see_opts)
-  done("applying bookdown settings")
-  if(.see_opts) {
-    print(outputs)
-    return(outputs)
-  }
+  outputs <- infuse_files(files, author = author, description = description, title = title)
+  done("applied bookdown template settings")
 
   mkdirp(.path)
-
-  map2(outputs, basename(files), function(file_string, filename) {
+  # this can be simple as bookdown does not currently have hierarchy and is
+  # a single folder, however more complex logic would be needed for more
+  # complex scenarios
+  walk2(outputs, stringr::str_replace(basename(files), pattern = "__\\.", "."), function(file_string, filename) {
     readr::write_file(file_string, file.path(.path, filename))
   })
-  done("bookdown files added in directory ", .path)
+  done("bookdown files added in directory: ", .path)
 }
 
 #' infuse files or get the parameters needed
 #' @param files vector of files to infuse
-#' @param ... parameters to pass to infuse
-#' @param .return_opts return the requested variables instead of infusing
+#' @param ... parameters to pass to glue
+#' @details
+#' parameters passed via ... will be given to glue and exposed
+#' as variables to replace in any template variables, as denoted
+#' by {{ }}
 #' @return list
-infuse_files <- function(files, ..., .return_opts = FALSE) {
-  vars_requested <- map(files, ~ {
-    vars <- infuser::variables_requested(.x)
-    if (length(vars)) {
-      return(unlist(vars))
-    }
-    return(NULL)
-  }) %>% setNames(basename(files))
-  vars_requested <- vars_requested[!map_lgl(vars_requested, is.null)]
-
-  if (.return_opts) {
-    return(vars_requested)
-  }
-
+infuse_files <- function(files, ...) {
   outputs <- map(files, function(.x) {
-    infuser::infuse(.x, ...)
+    whisker::whisker.render(readr::read_file(.x), data = list(...))
   }) %>% setNames(basename(files))
   return(outputs)
 }

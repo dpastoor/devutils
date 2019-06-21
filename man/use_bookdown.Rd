@@ -4,8 +4,7 @@
 \alias{use_bookdown}
 \title{create a bookdown scaffold}
 \usage{
-use_bookdown(author, title, description, ..., .path = ".",
-  .see_opts = FALSE)
+use_bookdown(author, title, description, ..., .path = ".")
 }
 \arguments{
 \item{author}{author of bookdown}
@@ -17,8 +16,6 @@ use_bookdown(author, title, description, ..., .path = ".",
 \item{...}{optional values to pass to infuser}
 
 \item{.path}{path to place bookdown template}
-
-\item{.see_opts}{just print out the optional values to infuse}
 }
 \description{
 create a bookdown scaffold
